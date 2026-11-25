@@ -39,6 +39,8 @@ def build_line() -> str:
         raise ValueError("line clauses must not contain line breaks")
     if not line.strip():
         raise ValueError("line must not be only white space")
+    if line != line.strip():
+        raise ValueError("line must not start or end with white space")
     return line
 
 
